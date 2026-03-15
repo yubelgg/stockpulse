@@ -51,15 +51,10 @@
 }
 
 html {
-  background-color: #171717 !important;
-  background: #171717 !important;
   min-height: 100vh !important;
 }
 
 body {
-  background-color: #171717 !important;
-  background: #171717 !important;
-  color: #fafafa !important;
   min-height: 100vh !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -75,10 +70,6 @@ body {
   body {
     /* Prevent horizontal scrolling on mobile */
     overflow-x: hidden;
-  }
-
-  .echarts-container {
-    min-height: 200px !important;
   }
 
   /* Prevent text overflow on mobile */
@@ -167,50 +158,38 @@ body {
   }
 }
 
-/* Custom animations for Aceternity-style effects */
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
+/* Thin scrollbar for scrollable containers */
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #c0c0c0 transparent;
 }
 
-@keyframes gradient {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 3px;
 }
 
-.animation-delay-4000 {
-  animation-delay: 4s;
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
 }
 
-.animate-gradient {
-  animation: gradient 3s ease infinite;
+.dark .overflow-y-auto {
+  scrollbar-color: #404040 transparent;
 }
 
-/* Glassmorphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.dark .overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #404040;
 }
+
+.dark .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
+

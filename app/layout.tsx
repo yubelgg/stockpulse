@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import ThemeProvider from "@/components/theme-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Market Maker - Financial Sentiment Dashboard",
-  description: "AI-powered sentiment analysis for stocks using earnings, news, and financial reports",
+  title: "StockPulse - AI-Powered Stock Sentiment Analysis",
+  description: "AI-powered sentiment analysis on financial news for informed investment decisions",
 };
 
 export default function RootLayout({
@@ -23,11 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-neutral-900">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100`}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
